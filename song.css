@@ -1,0 +1,26 @@
+.song-section{padding-top:0;padding-bottom:92px}
+.song-card{position:relative;display:grid;grid-template-columns:220px 1fr;align-items:center;gap:34px;max-width:880px;margin:0 auto;padding:34px 42px;border:1px solid #efd9df;border-radius:24px;background:linear-gradient(120deg,#fff2ee 0%,#f7eaf3 52%,#eaf4f7 100%);box-shadow:0 14px 34px #a9747b18;overflow:hidden}
+.song-card:before,.song-card:after{content:'✿';position:absolute;color:#d992a7;opacity:.32;font-size:26px;pointer-events:none}
+.song-card:before{left:18px;top:12px;transform:rotate(-18deg)}.song-card:after{right:20px;bottom:10px;transform:rotate(14deg)}
+.song-art{position:relative;width:178px;height:150px;margin:auto;display:grid;place-items:center}
+.song-disc{width:112px;height:112px;display:grid;place-items:center;border-radius:50%;color:#fff7ef;font:700 38px Nunito,sans-serif;background:radial-gradient(circle at 50% 50%,#fffaf4 0 8%,#d98ba4 9% 12%,#f2c0ce 13% 100%);box-shadow:0 9px 20px #bd728529;animation:record-sway 4s ease-in-out infinite}
+.song-note{position:absolute;color:#c65d7b;font-size:27px;animation:note-float 3s ease-in-out infinite}.song-note-one{left:10px;top:24px}.song-note-two{right:9px;bottom:22px;animation-delay:.6s}
+.song-copy h2{font:800 clamp(28px,3.3vw,38px)/1.12 Nunito,sans-serif;letter-spacing:-.03em;color:#604a52;margin:10px 0 8px}.song-copy p{margin:0 0 17px;color:#77676d;font-size:14px}
+.song-audio-source{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.song-player{display:flex;align-items:center;gap:12px;width:min(100%,520px);min-height:58px;padding:8px 12px;background:#fffaf2b8;border:1px solid #efd9df;border-radius:16px;box-shadow:0 5px 16px #a9747b12}
+.song-toggle{width:40px;height:40px;flex:0 0 40px;border:0;border-radius:50%;background:#c85f7c;color:white;font:700 15px 'DM Sans',sans-serif;cursor:pointer;box-shadow:0 4px 10px #c85f7c35;transition:transform .18s,background .18s}
+.song-toggle:hover{transform:scale(1.06);background:#b95170}.song-toggle:focus-visible,.song-progress:focus-visible,.song-download:focus-visible{outline:3px solid #84b9cc;outline-offset:3px}
+.song-time{min-width:35px;color:#77676d;font-size:11px;font-variant-numeric:tabular-nums;text-align:center}.song-duration{min-width:36px}
+.song-progress{--played:0%;appearance:none;-webkit-appearance:none;flex:1;min-width:50px;height:24px;margin:0;background:transparent;cursor:pointer}.song-progress:disabled{cursor:wait;opacity:.6}
+.song-progress::-webkit-slider-runnable-track{height:6px;border-radius:10px;background:linear-gradient(to right,#c85f7c 0 var(--played),#eadde0 var(--played) 100%)}
+.song-progress::-moz-range-track{height:6px;border-radius:10px;background:#eadde0}.song-progress::-moz-range-progress{height:6px;border-radius:10px;background:#c85f7c}
+.song-progress::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;margin-top:-5px;border:3px solid #fffaf2;border-radius:50%;background:#c85f7c;box-shadow:0 1px 5px #7a4c5a66}
+.song-progress::-moz-range-thumb{width:11px;height:11px;border:3px solid #fffaf2;border-radius:50%;background:#c85f7c;box-shadow:0 1px 5px #7a4c5a66}
+.song-download{display:grid;place-items:center;width:29px;height:29px;flex:0 0 29px;border:1px solid #eedde0;border-radius:50%;color:#b95170;text-decoration:none;font-size:17px;line-height:1}.song-download:hover{background:#fff;color:#a74462}
+@keyframes record-sway{0%,100%{transform:rotate(-5deg) translateY(0)}50%{transform:rotate(5deg) translateY(-4px)}}
+@keyframes note-float{0%,100%{transform:translateY(2px)}50%{transform:translateY(-7px)}}
+@media(max-width:760px){.song-section{padding-bottom:76px}.song-card{grid-template-columns:1fr;gap:12px;text-align:center;padding:26px 22px 30px}.song-art{height:125px}.song-disc{width:94px;height:94px;font-size:34px}.song-player{margin:0 auto;gap:8px;padding:7px 9px}.song-toggle{width:36px;height:36px;flex-basis:36px}.song-time{min-width:31px;font-size:10px}.song-download{width:26px;height:26px;flex-basis:26px}}
+@media(prefers-reduced-motion:reduce){.song-disc,.song-note{animation:none}}
+
+.song-status{min-height:18px;margin:8px 0 0;color:#927b82;font-size:11px;line-height:1.5}
+.song-progress:focus-visible,.song-toggle:focus-visible,.song-download:focus-visible{outline:3px solid #8ab6c5;outline-offset:3px}

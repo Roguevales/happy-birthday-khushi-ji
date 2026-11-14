@@ -1,0 +1,131 @@
+/* Three independent, full-width birthday feature sections */
+.feature-section{
+  display:block;
+  width:100%;
+  max-width:none;
+  padding:0;
+  margin:0 auto;
+}
+/* The letter is the opening screen and fills the viewport without a card or envelope. */
+.letter-stage{width:100vw;min-height:100vh;min-height:100svh;margin:0;padding:0;overflow:hidden;background:#fff3f5}
+.full-letter{--px:50%;--py:48%;position:relative;width:100%;min-height:100vh;min-height:100svh;box-sizing:border-box;display:flex;align-items:center;justify-content:center;padding:clamp(76px,12vh,130px) clamp(26px,12vw,190px);overflow:hidden;background:radial-gradient(ellipse at var(--px) var(--py),#fff9f6 0,#fff0f3 40%,#fbe5eb 100%);background-size:150% 150%;animation:letter-wash 18s ease-in-out infinite alternate;transition:filter .8s ease}
+.full-letter:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at var(--px) var(--py),#f4aec72b,transparent 48%);opacity:.24;transition:opacity .7s ease}
+.full-letter.is-revealed:before,.full-letter:hover:before{opacity:.8}
+.letter-kicker{position:absolute;top:clamp(28px,6vh,64px);left:clamp(26px,8vw,120px);font-size:11px;letter-spacing:.19em;text-transform:uppercase;color:#b87c8d}
+.corner-flower{position:absolute;right:clamp(30px,8vw,120px);top:clamp(24px,6vh,58px);font-size:clamp(32px,4vw,48px);color:#d9879d;animation:flower-turn 24s linear infinite;filter:drop-shadow(0 4px 12px #d9879d33)}
+.letter-copy{position:relative;z-index:1;width:min(100%,760px);font:400 clamp(15px,1.55vw,19px)/1.9 "DM Sans",sans-serif;color:#66545b;letter-spacing:.005em}
+.letter-copy p{min-height:1.9em;margin:0 0 clamp(15px,2.4vh,27px)}.letter-copy .typed-greeting{font:700 clamp(19px,2vw,24px)/1.6 Nunito,sans-serif;color:#a9566b;margin-bottom:clamp(22px,3vh,36px)}.letter-copy .typed-signature{font:700 clamp(16px,1.6vw,20px)/1.6 Nunito,sans-serif;color:#a9566b;text-align:right;margin:clamp(24px,4vh,48px) 0 0;opacity:0;transition:opacity 1.4s ease}.typed-signature.signature-visible{opacity:1}
+.letter-cursor{display:inline-block;width:1px;height:1.05em;margin-left:2px;vertical-align:-.12em;background:#d47f96;animation:cursor-blink .85s steps(2,start) infinite}
+.letter-heart,.letter-petal{position:absolute;color:#db91a6;pointer-events:none;animation:ornament-float 8s ease-in-out infinite}.heart-one{left:8%;top:42%;font-size:25px}.heart-two{right:12%;bottom:22%;font-size:20px;animation-delay:-3s}.letter-petal{font-size:15px;opacity:.5}.petal-one{left:18%;bottom:14%;animation-delay:-5s}.petal-two{right:24%;top:38%;animation-delay:-1s}
+@keyframes letter-wash{0%{background-position:0% 45%}100%{background-position:100% 55%}}@keyframes flower-turn{to{transform:rotate(360deg)}}@keyframes ornament-float{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-9px) rotate(7deg)}}@keyframes cursor-blink{to{opacity:0}}
+@media(max-width:700px){.full-letter{padding:92px 28px 72px;align-items:center}.letter-copy{font-size:clamp(14px,3.8vw,17px);line-height:1.8}.letter-copy p{margin-bottom:16px}.letter-copy .typed-greeting{font-size:20px;margin-bottom:20px}.letter-kicker{left:24px;top:28px}.corner-flower{right:24px;top:22px}.heart-one{left:6%;top:30%}.heart-two{right:7%;bottom:13%}}
+@media(max-height:680px){.letter-stage,.full-letter{min-height:100vh}.full-letter{padding-top:76px;padding-bottom:44px}.letter-copy{font-size:15px;line-height:1.65}.letter-copy p{margin-bottom:12px}.letter-copy .typed-signature{margin-top:18px}}
+.feature-card{
+  width:100%;
+  max-width:none;
+  min-height:410px;
+  margin:0;
+  padding:56px max(28px, calc((100vw - 1080px)/2));
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:clamp(34px,6vw,88px);
+  align-items:center;
+  border:0;
+  border-top:8px solid #fff;
+  border-bottom:0;
+  border-radius:0;
+  box-shadow:none;
+  overflow:hidden;
+  position:relative;
+}
+.feature-card:after{width:220px;height:220px;right:-90px;top:-120px;background:#fff6}
+.note-feature{background:linear-gradient(115deg,#fff0f5 0%,#fff9f7 52%,#fde8f1 100%)}
+.bouquet-feature{background:linear-gradient(115deg,#fbf5ff 0%,#f5edff 52%,#f9eaff 100%)}
+.cake-feature{background:linear-gradient(115deg,#fff1f3 0%,#fffaf5 54%,#fff0e9 100%)}
+.feature-visual{min-height:300px;display:grid;place-items:center}
+.note-feature .feature-visual{grid-column:1;grid-row:1}
+.note-feature .feature-copy{grid-column:2;grid-row:1;max-width:490px}
+.bouquet-feature .feature-copy{grid-column:1;grid-row:1;max-width:490px;justify-self:start}
+.bouquet-feature .feature-visual{grid-column:2;grid-row:1}
+.cake-feature .feature-visual{grid-column:1;grid-row:1}
+.cake-feature .feature-copy{grid-column:2;grid-row:1;max-width:490px}
+.feature-copy .section-kicker{font-size:13px;letter-spacing:.13em;font-weight:800;color:#ed347d}
+.feature-copy h2{font:900 clamp(34px,4vw,52px)/1.08 Nunito,sans-serif;letter-spacing:-.035em;color:#421039;margin:18px 0 16px;max-width:540px}
+.feature-copy p{font-size:clamp(16px,1.6vw,20px);line-height:1.55;color:#63465e;margin:0 0 26px;max-width:470px}
+.feature-hint{display:block;font-size:12px;color:#a15f7f;margin-top:20px}
+.feature-link{font-size:16px;gap:14px;padding:14px 22px;border:1px solid #ffc1db;background:linear-gradient(120deg,#fff,#ffeaf3);box-shadow:0 8px 18px #cf6b9825}
+.feature-link span{font-size:22px}
+.envelope-button{width:min(100%,390px);max-width:390px;padding:8px 0 0}
+.envelope-body{height:200px;border-radius:16px;box-shadow:0 18px 30px #d54a8730}
+.envelope-body:before,.envelope-body:after{border-bottom-width:150px}
+.envelope-flap{height:120px}
+.envelope-seal{top:88px;width:48px;height:48px;left:calc(50% - 24px);font-size:24px}
+.envelope-label{top:145px;font-size:17px}
+.envelope-prompt{font-size:12px;margin-top:13px}
+.bouquet-visual{min-height:390px}
+.bloom-stage{position:relative;width:min(100%,440px);height:390px;display:grid;place-items:center;isolation:isolate}
+.bloom-stage:before{content:"";position:absolute;width:82%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#fff9f5 0,#f9e9edaa 62%,transparent 72%);z-index:-1}
+.bloom-bouquet{width:min(100%,420px);height:100%;overflow:visible;filter:drop-shadow(0 15px 18px #9b667225);animation:bouquet-breathe 7s ease-in-out infinite}
+.bouquet-visual img.realistic-bouquet{display:block;width:min(100%,420px);height:360px;object-fit:contain;mix-blend-mode:multiply;filter:drop-shadow(0 15px 18px #9b667225)}
+.bouquet-stems{transform-origin:210px 310px;animation:stem-sway 6s ease-in-out infinite}
+.bloom{transform-box:fill-box;transform-origin:center;animation:bloom-open 1.5s cubic-bezier(.2,.8,.2,1) both,sway-flower 5.5s ease-in-out infinite;}
+.bloom-one{animation-delay:.15s,1.7s}.bloom-two{animation-delay:.8s,2.3s}.bloom-three{animation-delay:1.35s,2.8s}.bloom-four{animation-delay:1.9s,3.2s}.bloom-five{animation-delay:2.4s,3.7s}
+.floating-petal{position:absolute;z-index:2;width:12px;height:19px;border-radius:100% 0 100% 0;background:linear-gradient(145deg,#fff1e8,#df92a6);opacity:0;animation:petal-drift 8s ease-in-out infinite}
+.petal-a{left:16%;top:48%;--dx:-24px;animation-delay:2.2s}.petal-b{right:18%;top:34%;--dx:30px;animation-delay:4.1s}.petal-c{left:29%;top:27%;--dx:-18px;animation-delay:5.7s}.petal-d{right:30%;top:56%;--dx:20px;animation-delay:6.4s}
+.bouquet-note{display:inline-flex;align-items:center;gap:10px;margin-top:20px;padding:11px 15px;border:1px solid #eddae7;border-radius:999px;background:#fff9;color:#936b80;font-size:13px;letter-spacing:.025em}
+.bouquet-note span{color:#dc819b;font-size:18px}
+@keyframes bloom-open{0%{opacity:.55;scale:.48;rotate:-18deg}70%{scale:1.06}100%{opacity:1;scale:1;rotate:0deg}}
+@keyframes sway-flower{0%,100%{rotate:-2deg}50%{rotate:2deg}}
+@keyframes stem-sway{0%,100%{rotate:-1deg}50%{rotate:1deg}}
+@keyframes bouquet-breathe{0%,100%{transform:translateY(1px)}50%{transform:translateY(-5px)}}
+@keyframes petal-drift{0%,18%{opacity:0;transform:translate(0,12px) rotate(0) scale(.75)}30%{opacity:.8}75%{opacity:.55}100%{opacity:0;transform:translate(var(--dx),-90px) rotate(150deg) scale(1)}}
+.cake-visual{min-height:330px}
+.cake-visual .cake-svg{width:min(100%,390px);max-width:390px;height:330px;overflow:visible}
+.cake-photo-stage{position:relative;width:min(100%,390px);height:400px}
+.cake-visual .cake-photo{display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 14px 18px #9b667225)}
+.age-candles{position:absolute;top:0;left:50%;transform:translateX(-50%);width:min(100%,280px);height:110px;overflow:visible;filter:drop-shadow(0 4px 7px #9b667233)}
+.number-wax text{font:900 82px Nunito,sans-serif;paint-order:stroke;stroke:url(#waxCandle);stroke-width:19px;stroke-linejoin:round;fill:#f8d7c5}.number-wax .wax-highlight{stroke:none;fill:none;paint-order:normal;opacity:.28;transform:translate(-2px,-2px)}
+.cake-flame{transform-box:fill-box;transform-origin:50% 100%;filter:drop-shadow(0 0 6px #ffcf72) drop-shadow(0 0 14px #f4a66a);animation:cake-flicker 1.15s ease-in-out infinite alternate}.flame-core{fill:#fff7cb;opacity:.9}
+.cake-smoke{fill:none;stroke:#bbaeb4;stroke-width:3;stroke-linecap:round;opacity:0;filter:blur(1.3px)}
+.cake-mini-extinguishing .cake-flame{animation:cake-blowout 1.2s ease-out forwards!important}
+.cake-mini-extinguishing .cake-smoke{animation:cake-smoke-rise 2.1s ease-out .68s both}
+.cake-mini-extinguished .cake-flame{animation:none!important;opacity:0;transform:translate(16px,-7px) scale(.05,.1)}
+@keyframes cake-flicker{0%{transform:rotate(-3deg) scale(.94,1)}38%{transform:rotate(2deg) scale(1.03,.97)}72%{transform:rotate(-2deg) scale(.98,1.04)}100%{transform:rotate(3deg) scale(1.04,.96)}}
+@keyframes cake-blowout{0%{opacity:1;transform:rotate(0) scale(1)}18%{transform:rotate(-20deg) skewX(12deg) scale(1.18,.92)}38%{transform:rotate(14deg) skewX(-9deg) scale(.9,1.12)}58%{transform:translateX(10px) rotate(-48deg) skewX(20deg) scale(1.25,.72);opacity:.92}82%{transform:translateX(18px) rotate(-70deg) scale(.75,.55);opacity:.5}100%{transform:translate(23px,-7px) rotate(-78deg) scale(.05,.08);opacity:0}}
+@keyframes cake-smoke-rise{0%{opacity:0;transform:translate(-50%,3px) scale(.55)}18%{opacity:.48}65%{opacity:.27;transform:translate(calc(-50% + 5px),-24px) scale(1.1)}100%{opacity:0;transform:translate(calc(-50% - 4px),-48px) scale(1.45)}}
+.wish-making{display:flex;flex-direction:column;align-items:flex-start;width:min(100%,390px);margin-top:14px}
+.wish-prompt{font-size:13px;font-weight:700;color:#755c69;margin-bottom:8px}
+.wish-input{box-sizing:border-box;width:100%;min-height:48px;padding:12px 15px;border:1px solid #e9cfd8;border-radius:14px;background:#fffdfb;color:#533b4c;font:500 14px/1.4 inherit;box-shadow:0 5px 16px #aa748015;transition:border-color .2s ease,box-shadow .2s ease}
+.wish-input::placeholder{color:#b39aa5}.wish-input:focus{outline:none;border-color:#d88da6;box-shadow:0 0 0 3px #e9b5c233,0 6px 18px #aa748018}.wish-input[readonly]{background:#fffaf8}
+.wish-status{min-height:19px;margin:7px 0 9px;color:#a46f82;font-size:12px;line-height:1.5}.wish-status.wish-confirmed{color:#936781;animation:wish-confirm .8s ease both}
+.wish-making .feature-link{margin-top:0}.wish-making .feature-link:disabled{opacity:.72;cursor:default}
+@keyframes wish-confirm{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+.letter-content{max-width:780px;width:calc(100% - 48px);margin:30px auto 48px}
+.letter-paper{padding:38px 48px;border-radius:26px}
+@media(max-width:760px){
+  .feature-card{min-height:0;padding:46px 24px 42px;grid-template-columns:1fr;gap:18px;border-top-width:6px}
+  .feature-visual,.note-feature .feature-visual,.bouquet-feature .feature-visual,.cake-feature .feature-visual{grid-column:1;grid-row:1;min-height:230px}
+  .feature-copy,.note-feature .feature-copy,.bouquet-feature .feature-copy,.cake-feature .feature-copy{grid-column:1;grid-row:2;max-width:560px;width:100%;justify-self:center;text-align:center}
+  .feature-copy h2{font-size:clamp(32px,8vw,42px);margin:12px auto}
+  .feature-copy p{font-size:16px;margin:0 auto 22px}
+  .feature-hint{margin-top:16px}
+  .envelope-button{max-width:330px}
+  .envelope-body{height:175px}
+  .envelope-body:before,.envelope-body:after{border-bottom-width:130px}
+  .envelope-flap{height:105px}
+  .envelope-seal{top:77px}
+  .envelope-label{top:126px}
+  .bouquet-visual{min-height:300px}.bloom-stage{height:300px;width:min(100%,370px)}.bouquet-visual img.realistic-bouquet{height:290px;width:min(100%,370px)}
+  .cake-visual{min-height:250px}
+  .cake-visual .cake-svg{height:260px;width:min(100%,320px)}
+  .cake-photo-stage{height:300px;width:min(100%,360px)}
+  .wish-making{align-items:stretch;margin:14px auto 0}
+  .letter-content{margin:24px auto 36px}
+  .letter-paper{padding:30px 25px}
+}
+@media(prefers-reduced-motion:reduce){.bloom-bouquet,.bouquet-stems,.bloom,.floating-petal{animation:none!important}.bloom{opacity:1;scale:1;rotate:0}}
+@media(prefers-reduced-motion:reduce){.cake-flame{animation:none}.cake-mini-extinguishing .cake-flame{animation:cake-blowout .35s ease-out forwards!important}.cake-mini-extinguishing .cake-smoke{animation:none}.wish-status.wish-confirmed{animation:none}}
+@media(max-width:380px){
+  .feature-card{padding-left:18px;padding-right:18px}
+  .feature-copy h2{font-size:31px}
+}
